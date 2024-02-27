@@ -1,0 +1,77 @@
+3
+['Capture the essence of productivity with a high-resolution digital photograph of a young woman sitting in a black leather chair at a wooden table, with a MacBook Pro open in front of her. The image should have warm, natural lighting and a neutral color scheme.', 'Create a realistic digital painting of a person with glasses sitting in a vintage wooden chair at a rustic wooden table, with a vintage laptop in front of them. The image should have warm lighting, a muted color scheme, and a vintage style.', 'Young woman working on a MacBook Pro while sitting in a vintage wooden chair at a rustic wooden table. The warm, natural lighting and muted, earthy color scheme create a relaxed and productive atmosphere.']
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]WARNING:torch.distributed.elastic.agent.server.api:Received 2 death signal, shutting down workers
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 51708 closing signal SIGINT
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/data/yaojunyi/gpt-prompt/stanford_alpaca/generate_gptprompt.py", line 191, in <module>
+    main()
+  File "/data/yaojunyi/gpt-prompt/stanford_alpaca/generate_gptprompt.py", line 126, in main
+    model = LLaMAForCausalLM.from_pretrained(
+  File "/data/liuyijiang/gpt-prompt/stanford_alpaca/transformers-68d640f7c368bcaaaecfc678f11908ebbd3d6176/src/transformers/modeling_utils.py", line 2630, in from_pretrained
+    ) = cls._load_pretrained_model(
+  File "/data/liuyijiang/gpt-prompt/stanford_alpaca/transformers-68d640f7c368bcaaaecfc678f11908ebbd3d6176/src/transformers/modeling_utils.py", line 2939, in _load_pretrained_model
+    state_dict = load_state_dict(shard_file)
+  File "/data/liuyijiang/gpt-prompt/stanford_alpaca/transformers-68d640f7c368bcaaaecfc678f11908ebbd3d6176/src/transformers/modeling_utils.py", line 415, in load_state_dict
+    return torch.load(checkpoint_file, map_location="cpu")
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/serialization.py", line 809, in load
+    return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/serialization.py", line 1172, in _load
+    result = unpickler.load()
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/serialization.py", line 1142, in persistent_load
+    typed_storage = load_tensor(dtype, nbytes, key, _maybe_decode_ascii(location))
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/serialization.py", line 1112, in load_tensor
+    storage = zip_file.get_storage_from_record(name, numel, torch.UntypedStorage)._typed_storage()._untyped_storage
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/data/anaconda3/envs/alpaca/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/run.py", line 794, in main
+    run(args)
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/run.py", line 785, in run
+    elastic_launch(
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 241, in launch_agent
+    result = agent.run()
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 129, in wrapper
+    result = f(*args, **kwargs)
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 723, in run
+    result = self._invoke_run(role)
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 864, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 62, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 51628 got signal: 2
+Instruction: A big bus in a parking lot next to a big building 
+Traceback (most recent call last):
+  File "/data/yaojunyi/gpt-prompt/stanford_alpaca/generate_gptprompt.py", line 191, in <module>
+    main()
+  File "/data/yaojunyi/gpt-prompt/stanford_alpaca/generate_gptprompt.py", line 180, in main
+    pred = evaluate(instruction, tokenizer, model,args=args)
+UnboundLocalError: local variable 'tokenizer' referenced before assignment
+WARNING:torch.distributed.elastic.agent.server.api:Received 2 death signal, shutting down workers
+Traceback (most recent call last):
+  File "/data/anaconda3/envs/alpaca/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/run.py", line 794, in main
+    run(args)
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/run.py", line 785, in run
+    elastic_launch(
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 241, in launch_agent
+    result = agent.run()
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 129, in wrapper
+    result = f(*args, **kwargs)
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 723, in run
+    result = self._invoke_run(role)
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 864, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/data/anaconda3/envs/alpaca/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 62, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 38499 got signal: 2

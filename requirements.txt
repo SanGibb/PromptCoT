@@ -1,0 +1,10 @@
+numpy
+rouge_score
+fire
+openai
+sentencepiece
+tokenizers==0.12.1
+wandb
+accelerate
+bitsandbytes
+-e transformers-68d640f7c368bcaaaecfc678f11908ebbd3d6176
