@@ -1,0 +1,23 @@
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --nproc_per_node=8 --master_port=8898 train_prompt.py \
+--model_name_or_path '../llama_weights/llama_weights_hf/llama-7b-hf' \
+--prompt_mode "CoT:alpaca,continue,blip_pair,inter,CoT" \
+--data_path "./data/alpaca/alpaca_data.json,./data/LAION/tcontinue_data_gaussian_0.375.json,./data/LAION/t2t_blip_l6.json,./data/LAION/t2t_inter_l6.json,./data/LAION/CoT_data.json" \
+--bf16 True \
+--output_dir "LOGs/CoT" \
+--num_train_epochs 3 \
+--per_device_train_batch_size 1 \
+--per_device_eval_batch_size 1 \
+--gradient_accumulation_steps 2 \
+--evaluation_strategy "no" \
+--save_strategy "steps" \
+--save_steps 2000 \
+--save_total_limit 1 \
+--learning_rate 2e-5 \
+--weight_decay 0. \
+--warmup_ratio 0.03 \
+--lr_scheduler_type "cosine" \
+--logging_steps 1 \
+--fsdp "full_shard auto_wrap" \
+--fsdp_transformer_layer_cls_to_wrap 'LLaMADecoderLayer' \
+--tf32 True \
+--model_max_length 1500
