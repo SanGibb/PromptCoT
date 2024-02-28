@@ -1,6 +1,7 @@
 # PromptCoT
 This is an initial repo for PromptCoT. The repo contains:
 * the code for inferrence
+* the code for training
 * the COCO validation data we use for evaluation
 * the pre-trained model at 7B size
 
